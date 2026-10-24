@@ -1,0 +1,42 @@
+======================================================================
+BUOC 1. DOC VA HOP NHAT DU LIEU
+======================================================================
+[OK] income_statement.csv      60 dong x 15 cot  (.\income_statement.csv)
+[OK] balance_sheet.csv         60 dong x 24 cot  (.\balance_sheet.csv)
+[OK] cashflow.csv              60 dong x 23 cot  (.\cashflow.csv)
+[OK] financial_notes.csv       60 dong x 11 cot  (.\financial_notes.csv)
+[OK] company_info.csv          12 dong x 13 cot  (.\company_info.csv)
+
+Hop nhat theo khoa company_id + fiscal_year:
+   - cashflow.csv: bo 2 cot trung ten da co san (net_income_vnd_mn, depreciation_amortization_vnd_mn)
+Hop nhat thong tin doanh nghiep theo company_id:
+
+======================================================================
+BUOC 2. KIEM TRA DOI CHIEU GIUA CAC BAO CAO
+======================================================================
+[DAT] Total Assets = Total Liabilities + Total Equity: 60/60 dong dung
+[DAT] Beginning Cash + Net Change in Cash = Ending Cash: 60/60 dong dung
+[DAT] Ending Cash = Cash tren balance_sheet: 60/60 dong dung
+[DAT] Gross Profit = Revenue - COGS: 60/60 dong dung
+[DAT] Beginning Cash nam t = Ending Cash nam t-1: 48/48 cap nam dung
+[DAT] Don vi so lieu: ['VND_million']
+
+======================================================================
+TOM TAT CHAT LUONG DU LIEU
+======================================================================
+So dong: 60 | So doanh nghiep: 12 | Nam: 2021-2025 | So cot: 80
+[DAT] Khong co o trong trong bang master
+
+======================================================================
+BUOC 3. TINH 17 CHI TIEU TAI CHINH
+======================================================================
+[OK] Da tinh 17 chi tieu cho 60 dong
+     Nam dau (2021) de trong vi can nam truoc: ['revenue_growth_pct', 'roa_pct', 'roe_pct', 'dso_days', 'inventory_days', 'dpo_days']
+[LUU Y] Dong co loi nhuan rong <= 0 (CFO/Net Income kho dien giai): [['C009', 2021], ['C009', 2022], ['C012', 2025]]
+
+======================================================================
+HOAN TAT
+======================================================================
+Master (khong chi tieu)  : C:\Users\PC\OneDrive\Desktop\fes\output_master\master_hopnhat.xlsx  [60 dong x 80 cot]
+Master + 17 chi tieu     : C:\Users\PC\OneDrive\Desktop\fes\output_master\master_hopnhat_with_metrics.xlsx  [60 dong x 97 cot]
+Buoc tiep theo: py benchmark_nganh.py --input output_master\master_hopnhat_with_metrics.xlsx

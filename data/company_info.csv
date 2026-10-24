@@ -1,0 +1,13 @@
+﻿company_id,company_name,ticker_simulated,industry,subindustry,headquarters,founded_year,listing_status_simulated,fiscal_year_end,reporting_currency,statement_unit,company_size_band,data_is_synthetic
+C001,An Phúc Packaged Foods JSC,APF,Consumer Goods Manufacturing,Packaged Food Manufacturing,Hanoi,1998,LISTED_SIMULATED,12-31,VND,VND_million,LARGE,TRUE
+C002,Bảo Minh Foods Manufacturing JSC,BMF,Consumer Goods Manufacturing,Packaged Food Manufacturing,Ho Chi Minh City,2000,LISTED_SIMULATED,12-31,VND,VND_million,LARGE,TRUE
+C003,Cửu Long Nutrition JSC,CLN,Consumer Goods Manufacturing,Packaged Food Manufacturing,Can Tho,2002,LISTED_SIMULATED,12-31,VND,VND_million,MEDIUM,TRUE
+C004,Đại Phát Consumer Foods JSC,DPF,Consumer Goods Manufacturing,Packaged Food Manufacturing,Bac Ninh,2004,LISTED_SIMULATED,12-31,VND,VND_million,MEDIUM,TRUE
+C005,EverViet Food Industries JSC,EVF,Consumer Goods Manufacturing,Packaged Food Manufacturing,Hai Phong,2006,LISTED_SIMULATED,12-31,VND,VND_million,LARGE,TRUE
+C006,Gia Hưng Packaged Foods JSC,GHF,Consumer Goods Manufacturing,Packaged Food Manufacturing,Hung Yen,2008,LISTED_SIMULATED,12-31,VND,VND_million,MEDIUM,TRUE
+C007,Hòa Bình Food Products JSC,HBF,Consumer Goods Manufacturing,Packaged Food Manufacturing,Hanoi,2010,LISTED_SIMULATED,12-31,VND,VND_million,MEDIUM,TRUE
+C008,Lotus Nutrition Industries JSC,LNI,Consumer Goods Manufacturing,Packaged Food Manufacturing,Ho Chi Minh City,2012,LISTED_SIMULATED,12-31,VND,VND_million,LARGE,TRUE
+C009,Minh An Consumer Foods JSC,MAC,Consumer Goods Manufacturing,Packaged Food Manufacturing,Da Nang,2014,LISTED_SIMULATED,12-31,VND,VND_million,MEDIUM,TRUE
+C010,NovaViet Packaged Foods JSC,NVF,Consumer Goods Manufacturing,Packaged Food Manufacturing,Ho Chi Minh City,1997,LISTED_SIMULATED,12-31,VND,VND_million,LARGE,TRUE
+C011,Phú An Nutrition JSC,PAN,Consumer Goods Manufacturing,Packaged Food Manufacturing,Thanh Hoa,1999,LISTED_SIMULATED,12-31,VND,VND_million,MEDIUM,TRUE
+C012,Thành Đạt Food Industries JSC,TDF,Consumer Goods Manufacturing,Packaged Food Manufacturing,Nghe An,2001,LISTED_SIMULATED,12-31,VND,VND_million,LARGE,TRUE
