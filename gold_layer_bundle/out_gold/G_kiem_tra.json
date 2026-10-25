@@ -1,0 +1,35 @@
+{
+ "metric_recompute": {
+  "cells": 1020,
+  "mismatches": 0
+ },
+ "engine_equals_step5_6": {
+  "max_abs_score_diff": 8.326672684688674e-14,
+  "risk_score_equal": true,
+  "severity_equal": true,
+  "health_equal": true,
+  "scenario_equal": true,
+  "tags_equal": 60
+ },
+ "evidence_integrity": {
+  "fired_signals": 105,
+  "signals_with_raw_evidence": 105,
+  "traceability_pct": 100.0,
+  "raw_cells_checked": 868,
+  "mismatches": 0
+ },
+ "explanations": {
+  "rows": 60,
+  "contains_nan": 0
+ },
+ "qa": {
+  "questions": 30,
+  "answered": 30,
+  "mean_latency_ms": 0.905,
+  "answers_equal_B9": 30,
+  "auto_graded": 29,
+  "correct": 29,
+  "evidence_covers_reference": 29,
+  "paraphrase_ok": "4/4"
+ }
+}

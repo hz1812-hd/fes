@@ -1,0 +1,93 @@
+﻿field_order,file_name,field_name,data_type,nullable,unit,description,allowed_values_or_format,example_value,usage_note
+1,company_info.csv,company_id,string,NO,,Mã định danh duy nhất của doanh nghiệp giả lập.,C001…C012,C001,"Khóa chính, dùng để join với các báo cáo tài chính."
+2,company_info.csv,company_name,string,NO,,Tên doanh nghiệp giả lập.,Tên doanh nghiệp hư cấu,An Phúc Packaged Foods JSC,Không đại diện cho doanh nghiệp thực tế.
+3,company_info.csv,ticker_simulated,string,NO,,Mã cổ phiếu giả lập.,3 ký tự chữ cái,APF,Chỉ dùng để minh họa/hiển thị.
+4,company_info.csv,industry,category,NO,,Ngành chính của doanh nghiệp.,Consumer Goods Manufacturing,Consumer Goods Manufacturing,Các doanh nghiệp được đặt trong cùng ngành để hỗ trợ benchmark.
+5,company_info.csv,subindustry,category,NO,,Phân ngành chi tiết.,Packaged Food Manufacturing,Packaged Food Manufacturing,Dùng cho so sánh đồng ngành.
+6,company_info.csv,headquarters,category,NO,,Địa điểm trụ sở giả lập.,Tỉnh/thành phố Việt Nam,Hanoi,"Thông tin mô phỏng, không phải dữ liệu doanh nghiệp thật."
+7,company_info.csv,founded_year,integer,NO,,Năm thành lập giả lập.,YYYY,1998,Biến hồ sơ doanh nghiệp.
+8,company_info.csv,listing_status_simulated,category,NO,,Trạng thái niêm yết giả lập.,LISTED_SIMULATED,LISTED_SIMULATED,Không mang ý nghĩa pháp lý/thị trường thực tế.
+9,company_info.csv,fiscal_year_end,string,NO,,Ngày kết thúc năm tài chính.,MM-DD,12-31,Toàn bộ dữ liệu hiện dùng 12-31.
+10,company_info.csv,reporting_currency,category,NO,,Đơn vị tiền tệ báo cáo.,VND,VND,Áp dụng thống nhất cho toàn bộ Data Pack.
+11,company_info.csv,statement_unit,category,NO,,Đơn vị trình bày số liệu.,VND_million,VND_million,Mọi giá trị tiền tệ trong báo cáo là triệu VND.
+12,company_info.csv,company_size_band,category,NO,,Phân nhóm quy mô doanh nghiệp.,MEDIUM; LARGE,LARGE,"Phục vụ phân tích/benchmark, không phải ground truth rủi ro."
+13,company_info.csv,data_is_synthetic,boolean,NO,,Cờ xác nhận dữ liệu là giả lập.,TRUE,TRUE,Luôn bằng TRUE trong Data Pack này.
+14,income_statement.csv,company_id,string,NO,,Mã doanh nghiệp.,C001…C012,C001,Join với company_info.csv.
+15,income_statement.csv,fiscal_year,integer,NO,,Năm tài chính.,2021…2025,2021,Khóa ghép cùng company_id.
+16,income_statement.csv,revenue_vnd_mn,integer,NO,VND_million,Doanh thu thuần.,triệu VND,1450280,Chỉ tiêu gốc dùng tính tăng trưởng và biên lợi nhuận.
+17,income_statement.csv,cost_of_goods_sold_vnd_mn,integer,NO,VND_million,Giá vốn hàng bán.,triệu VND,1003296,Gross profit = Revenue - COGS.
+18,income_statement.csv,gross_profit_vnd_mn,integer,NO,VND_million,Lợi nhuận gộp.,triệu VND,446984,Được sinh nhất quán với revenue và COGS.
+19,income_statement.csv,selling_expense_vnd_mn,integer,NO,VND_million,Chi phí bán hàng.,triệu VND,109993,Chi phí hoạt động.
+20,income_statement.csv,administrative_expense_vnd_mn,integer,NO,VND_million,Chi phí quản lý doanh nghiệp.,triệu VND,81031,Chi phí hoạt động.
+21,income_statement.csv,depreciation_amortization_vnd_mn,integer,NO,VND_million,Khấu hao và phân bổ.,triệu VND,44965,Được dùng trong CFO và dòng đầu tư.
+22,income_statement.csv,operating_profit_vnd_mn,integer,NO,VND_million,Lợi nhuận từ hoạt động kinh doanh trước thu nhập/tài chính khác.,triệu VND,210995,"Gross profit trừ chi phí bán hàng, quản lý và D&A."
+23,income_statement.csv,finance_income_vnd_mn,integer,NO,VND_million,Thu nhập tài chính.,triệu VND,4894,Thu nhập tài chính giả lập.
+24,income_statement.csv,interest_expense_vnd_mn,integer,NO,VND_million,Chi phí lãi vay.,triệu VND,18705,Dùng đánh giá gánh nặng lãi vay.
+25,income_statement.csv,other_income_vnd_mn,integer,NO,VND_million,Thu nhập khác ròng giả lập.,triệu VND,-780,Có thể âm hoặc dương nhỏ.
+26,income_statement.csv,profit_before_tax_vnd_mn,integer,NO,VND_million,Lợi nhuận trước thuế.,triệu VND,196404,Chỉ tiêu trước thuế.
+27,income_statement.csv,income_tax_expense_vnd_mn,integer,NO,VND_million,Chi phí thuế thu nhập doanh nghiệp.,triệu VND,39281,Không âm trong mô phỏng hiện tại.
+28,income_statement.csv,net_income_vnd_mn,integer,NO,VND_million,Lợi nhuận sau thuế.,triệu VND,157123,"Dùng cho Net Margin, ROA, ROE, CFO/NI."
+29,balance_sheet.csv,company_id,string,NO,,Mã doanh nghiệp.,C001…C012,C001,Join với company_info.csv.
+30,balance_sheet.csv,fiscal_year,integer,NO,,Năm tài chính.,2021…2025,2021,Khóa ghép cùng company_id.
+31,balance_sheet.csv,cash_and_cash_equivalents_vnd_mn,integer,NO,VND_million,Tiền và tương đương tiền cuối kỳ.,triệu VND,360320,Khớp với ending_cash_vnd_mn trong cashflow.csv.
+32,balance_sheet.csv,accounts_receivable_vnd_mn,integer,NO,VND_million,Các khoản phải thu.,triệu VND,182775,Dùng tính DSO và rủi ro phải thu.
+33,balance_sheet.csv,inventory_vnd_mn,integer,NO,VND_million,Hàng tồn kho.,triệu VND,214403,Dùng tính Inventory Days và rủi ro tồn kho.
+34,balance_sheet.csv,other_current_assets_vnd_mn,integer,NO,VND_million,Tài sản ngắn hạn khác.,triệu VND,67184,Thành phần tài sản ngắn hạn.
+35,balance_sheet.csv,total_current_assets_vnd_mn,integer,NO,VND_million,Tổng tài sản ngắn hạn.,triệu VND,824682,Cash + AR + Inventory + Other Current Assets.
+36,balance_sheet.csv,property_plant_equipment_net_vnd_mn,integer,NO,VND_million,Tài sản cố định hữu hình ròng.,triệu VND,601800,PP&E sau khấu hao.
+37,balance_sheet.csv,intangible_assets_vnd_mn,integer,NO,VND_million,Tài sản vô hình.,triệu VND,26325,Tài sản dài hạn.
+38,balance_sheet.csv,long_term_investments_vnd_mn,integer,NO,VND_million,Đầu tư dài hạn.,triệu VND,36842,Tài sản dài hạn.
+39,balance_sheet.csv,other_noncurrent_assets_vnd_mn,integer,NO,VND_million,Tài sản dài hạn khác.,triệu VND,24738,Tài sản dài hạn.
+40,balance_sheet.csv,total_assets_vnd_mn,integer,NO,VND_million,Tổng tài sản.,triệu VND,1514387,Luôn bằng Total Liabilities + Equity.
+41,balance_sheet.csv,short_term_debt_vnd_mn,integer,NO,VND_million,Nợ vay ngắn hạn.,triệu VND,101520,Một phần tổng nợ vay.
+42,balance_sheet.csv,accounts_payable_vnd_mn,integer,NO,VND_million,Các khoản phải trả người bán.,triệu VND,151182,Dùng tính DPO.
+43,balance_sheet.csv,other_current_liabilities_vnd_mn,integer,NO,VND_million,Nợ ngắn hạn khác.,triệu VND,102169,Thành phần nợ ngắn hạn.
+44,balance_sheet.csv,total_current_liabilities_vnd_mn,integer,NO,VND_million,Tổng nợ ngắn hạn.,triệu VND,354871,Short-term debt + AP + Other Current Liabilities.
+45,balance_sheet.csv,long_term_debt_vnd_mn,integer,NO,VND_million,Nợ vay dài hạn.,triệu VND,188536,Một phần tổng nợ vay.
+46,balance_sheet.csv,other_noncurrent_liabilities_vnd_mn,integer,NO,VND_million,Nợ dài hạn khác.,triệu VND,36388,Thành phần nợ dài hạn.
+47,balance_sheet.csv,total_liabilities_vnd_mn,integer,NO,VND_million,Tổng nợ phải trả.,triệu VND,579795,Current liabilities + long-term debt + other non-current liabilities.
+48,balance_sheet.csv,share_capital_vnd_mn,integer,NO,VND_million,Vốn góp/cổ phần.,triệu VND,486000,Thành phần vốn chủ sở hữu.
+49,balance_sheet.csv,retained_earnings_vnd_mn,integer,NO,VND_million,Lợi nhuận giữ lại.,triệu VND,401342,"Tăng theo lợi nhuận, giảm theo cổ tức."
+50,balance_sheet.csv,other_equity_vnd_mn,integer,NO,VND_million,Các khoản vốn chủ sở hữu khác.,triệu VND,47250,Thành phần vốn chủ sở hữu.
+51,balance_sheet.csv,total_equity_vnd_mn,integer,NO,VND_million,Tổng vốn chủ sở hữu.,triệu VND,934592,Share Capital + Retained Earnings + Other Equity.
+52,balance_sheet.csv,total_liabilities_and_equity_vnd_mn,integer,NO,VND_million,Tổng nguồn vốn.,triệu VND,1514387,Luôn bằng total_assets_vnd_mn.
+53,cashflow.csv,company_id,string,NO,,Mã doanh nghiệp.,C001…C012,C001,Join với company_info.csv.
+54,cashflow.csv,fiscal_year,integer,NO,,Năm tài chính.,2021…2025,2021,Khóa ghép cùng company_id.
+55,cashflow.csv,net_income_vnd_mn,integer,NO,VND_million,Lợi nhuận sau thuế dùng làm điểm xuất phát CFO gián tiếp.,triệu VND,157123,Khớp với income_statement.csv.
+56,cashflow.csv,depreciation_amortization_vnd_mn,integer,NO,VND_million,Khấu hao và phân bổ cộng lại trong CFO.,triệu VND,44965,Khoản phi tiền tệ.
+57,cashflow.csv,cash_effect_change_accounts_receivable_vnd_mn,integer,NO,VND_million,Ảnh hưởng tiền do biến động phải thu.,triệu VND,-23734,AR tăng thường tạo giá trị âm.
+58,cashflow.csv,cash_effect_change_inventory_vnd_mn,integer,NO,VND_million,Ảnh hưởng tiền do biến động tồn kho.,triệu VND,-28103,Inventory tăng thường tạo giá trị âm.
+59,cashflow.csv,cash_effect_change_other_current_assets_vnd_mn,integer,NO,VND_million,Ảnh hưởng tiền do biến động tài sản ngắn hạn khác.,triệu VND,316,Dùng trong CFO.
+60,cashflow.csv,cash_effect_change_accounts_payable_vnd_mn,integer,NO,VND_million,Ảnh hưởng tiền do biến động phải trả.,triệu VND,15923,AP tăng thường tạo giá trị dương.
+61,cashflow.csv,cash_effect_change_other_current_liabilities_vnd_mn,integer,NO,VND_million,Ảnh hưởng tiền do biến động nợ ngắn hạn khác.,triệu VND,919,Dùng trong CFO.
+62,cashflow.csv,cash_effect_change_other_noncurrent_liabilities_vnd_mn,integer,NO,VND_million,Ảnh hưởng tiền do biến động nợ dài hạn khác.,triệu VND,-1412,Dùng trong CFO mô phỏng.
+63,cashflow.csv,net_cash_from_operating_activities_vnd_mn,integer,NO,VND_million,Lưu chuyển tiền thuần từ hoạt động kinh doanh (CFO).,triệu VND,165997,Chỉ tiêu trọng tâm để đánh giá chất lượng lợi nhuận.
+64,cashflow.csv,capital_expenditure_vnd_mn,integer,NO,VND_million,Chi tiền đầu tư CAPEX.,triệu VND; thường âm,-79765,Dòng tiền đầu tư.
+65,cashflow.csv,change_intangible_assets_vnd_mn,integer,NO,VND_million,Dòng tiền liên quan thay đổi tài sản vô hình.,triệu VND,-2025,Dòng tiền đầu tư.
+66,cashflow.csv,change_long_term_investments_vnd_mn,integer,NO,VND_million,Dòng tiền liên quan thay đổi đầu tư dài hạn.,triệu VND,-3092,Dòng tiền đầu tư.
+67,cashflow.csv,change_other_noncurrent_assets_vnd_mn,integer,NO,VND_million,Dòng tiền liên quan thay đổi tài sản dài hạn khác.,triệu VND,-438,Dòng tiền đầu tư.
+68,cashflow.csv,net_cash_from_investing_activities_vnd_mn,integer,NO,VND_million,Lưu chuyển tiền thuần từ hoạt động đầu tư (CFI).,triệu VND,-85320,Tổng các dòng tiền đầu tư.
+69,cashflow.csv,net_debt_issuance_repayment_vnd_mn,integer,NO,VND_million,Phát hành/trả nợ vay ròng.,triệu VND,47056,"Dương là tăng nợ ròng, âm là trả nợ ròng."
+70,cashflow.csv,equity_issuance_vnd_mn,integer,NO,VND_million,Phát hành vốn chủ sở hữu trong năm.,triệu VND,0,"Thường bằng 0, có thể dương trong tình huống tái vốn hóa."
+71,cashflow.csv,dividends_paid_vnd_mn,integer,NO,VND_million,Cổ tức đã trả.,triệu VND; thường âm,-39281,Dòng tiền tài chính.
+72,cashflow.csv,net_cash_from_financing_activities_vnd_mn,integer,NO,VND_million,Lưu chuyển tiền thuần từ hoạt động tài chính (CFF).,triệu VND,7775,Nợ + phát hành vốn - cổ tức.
+73,cashflow.csv,net_change_in_cash_vnd_mn,integer,NO,VND_million,Thay đổi ròng tiền trong năm.,triệu VND,88452,CFO + CFI + CFF.
+74,cashflow.csv,beginning_cash_vnd_mn,integer,NO,VND_million,Tiền đầu kỳ.,triệu VND,271868,Ending cash năm trước.
+75,cashflow.csv,ending_cash_vnd_mn,integer,NO,VND_million,Tiền cuối kỳ.,triệu VND,360320,Khớp với balance_sheet.cash_and_cash_equivalents_vnd_mn.
+76,financial_notes.csv,company_id,string,NO,,Mã doanh nghiệp.,C001…C012,C001,Join với company_info.csv.
+77,financial_notes.csv,fiscal_year,integer,NO,,Năm tài chính.,2021…2025,2021,Khóa ghép cùng company_id.
+78,financial_notes.csv,average_customer_credit_terms_days,integer,NO,days,Số ngày tín dụng khách hàng trung bình giả lập.,ngày,41,Dùng đối chiếu với DSO.
+79,financial_notes.csv,inventory_policy_days_target,integer,NO,,Mục tiêu số ngày tồn kho theo chính sách giả lập.,ngày,65,Dùng benchmark Inventory Days.
+80,financial_notes.csv,average_borrowing_rate_pct,decimal,NO,%,Lãi suất vay trung bình.,%,7.02,Có thể dùng kiểm tra gánh nặng lãi vay.
+81,financial_notes.csv,debt_maturing_within_12m_pct,decimal,NO,%,Tỷ lệ nợ vay đáo hạn trong 12 tháng.,%,35.0,Tín hiệu thanh khoản/tái cấp vốn.
+82,financial_notes.csv,major_customer_concentration_pct,integer,NO,%,Tỷ lệ doanh thu từ nhóm khách hàng lớn giả lập.,%,18,Thông tin rủi ro tập trung.
+83,financial_notes.csv,export_revenue_pct,integer,NO,%,Tỷ lệ doanh thu xuất khẩu giả lập.,%,28,Thông tin cơ cấu doanh thu.
+84,financial_notes.csv,capex_intensity_pct,decimal,NO,%,CAPEX trên doanh thu.,%,5.5,Dùng đánh giá cường độ đầu tư.
+85,financial_notes.csv,auditor_opinion_simulated,category,NO,,Ý kiến kiểm toán giả lập.,UNMODIFIED,UNMODIFIED,Không phải ý kiến kiểm toán thực tế.
+86,financial_notes.csv,note_text,string,NO,,Ghi chú mô phỏng chung.,text,Synthetic operational note; all figures are simulated for competition use.,Không chứa dữ liệu doanh nghiệp thực.
+87,financial_scenarios_sample.csv,company_id,string,NO,,Mã doanh nghiệp của mẫu ground truth công khai.,C001…C012,C001,Join với dữ liệu tài chính.
+88,financial_scenarios_sample.csv,fiscal_year,integer,NO,,Năm tài chính được gắn nhãn mẫu.,2021…2025,2023,Không phải mọi company-year đều có nhãn công khai.
+89,financial_scenarios_sample.csv,primary_scenario,category,NO,,Kịch bản tài chính chính tham chiếu.,"Ví dụ NORMAL, DEBT_EXPANSION, MARGIN_DETERIORATION…",NORMAL_STABLE,Dùng train/validate và hiểu yêu cầu bài toán.
+90,financial_scenarios_sample.csv,alert_tags,string_list,YES,,Các tín hiệu/cảnh báo liên quan.,Phân tách bằng dấu ;,,Có thể rỗng đối với mẫu khỏe/bình thường.
+91,financial_scenarios_sample.csv,severity,category,NO,,Mức độ cảnh báo tham chiếu.,LOW; MEDIUM; HIGH; CRITICAL,LOW,Không nhất thiết phải trùng với cách chia risk level của đội.
+92,financial_scenarios_sample.csv,overall_health,category,NO,,Trạng thái sức khỏe tài chính tham chiếu.,HEALTHY; WATCH; HIGH_RISK; RECOVERING,HEALTHY,Ground truth mẫu cho phần phân loại/cảnh báo.
